@@ -6,7 +6,7 @@
 
 class Quiz {
 public:
-  Quiz(std::string title = "Simple CLI Quiz");
+  Quiz(std::string title = {"Simple CLI Quiz"});
   void addQuestion(const Question &q);
   void run();
 

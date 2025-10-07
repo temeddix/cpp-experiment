@@ -9,11 +9,11 @@ Question::Question(std::string prompt, std::vector<std::string> options,
 
 bool Question::ask() const {
   std::cout << prompt_ << "\n";
-  for (size_t i = 0; i < options_.size(); ++i) {
+  for (size_t i = {0}; i < options_.size(); ++i) {
     std::cout << "  " << (i + 1) << ") " << options_[i] << "\n";
   }
 
-  int choice = 0;
+  int choice = {0};
   while (true) {
     std::cout << "Your answer (enter the option number): ";
     if (!(std::cin >> choice)) {
@@ -30,7 +30,7 @@ bool Question::ask() const {
     break;
   }
 
-  const bool correct = (choice - 1) == correctIndex_;
+  const bool correct = {(choice - 1) == correctIndex_};
   if (correct) {
     std::cout << "Correct!\n\n";
   } else {
