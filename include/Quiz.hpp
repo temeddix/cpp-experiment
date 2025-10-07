@@ -1,10 +1,8 @@
-#ifndef CPP_EXPERIMENT_QUIZ_HPP
-#define CPP_EXPERIMENT_QUIZ_HPP
+#pragma once
 
 #include "Question.hpp"
 #include <string>
 #include <vector>
-
 
 class Quiz {
 public:
@@ -16,5 +14,3 @@ private:
   std::string title_;
   std::vector<Question> questions_;
 };
-
-#endif // CPP_EXPERIMENT_QUIZ_HPP

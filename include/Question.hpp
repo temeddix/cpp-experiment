@@ -1,5 +1,4 @@
-#ifndef CPP_EXPERIMENT_QUESTION_HPP
-#define CPP_EXPERIMENT_QUESTION_HPP
+#pragma once
 
 #include <string>
 #include <vector>
@@ -18,5 +17,3 @@ private:
   std::vector<std::string> options_;
   int correctIndex_;
 };
-
-#endif // CPP_EXPERIMENT_QUESTION_HPP
