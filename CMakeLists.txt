@@ -9,6 +9,6 @@ include_directories(${PROJECT_SOURCE_DIR}/include)
 add_executable(
     quiz
     src/main.cpp
-    src/Question.cpp
     src/Quiz.cpp
+    src/subdir/Question.cpp
 )

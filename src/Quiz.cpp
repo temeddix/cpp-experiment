@@ -1,4 +1,4 @@
-#include "../include/Quiz.hpp"
+#include "Quiz.hpp"
 #include <iostream>
 
 Quiz::Quiz(std::string title) : title_(std::move(title)) {}

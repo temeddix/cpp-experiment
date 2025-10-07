@@ -1,5 +1,5 @@
-#include "../include/Question.hpp"
-#include "../include/Quiz.hpp"
+#include "Quiz.hpp"
+#include "subdir/Question.hpp"
 
 int main() {
   Quiz quiz("C++17 OOP CLI Quiz");
