@@ -9,7 +9,7 @@ Question::Question(std::string prompt, std::vector<std::string> options,
       options(std::move(options)),
       correctIndex(correctIndex) {}
 
-bool Question::ask() const {
+std::expected<bool, QuestionError> Question::ask() const {
   std::cout << prompt << "\n";
   for (size_t i = {0}; i < options.size(); ++i) {
     std::cout << "  " << (i + 1) << ") " << options[i] << "\n";
@@ -39,6 +39,7 @@ bool Question::ask() const {
     std::cout << "Incorrect. Correct answer: " << (correctIndex + 1) << ") "
               << options[correctIndex] << "\n\n";
   }
+
   return correct;
 }
 

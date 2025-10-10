@@ -20,7 +20,13 @@ int main() {
 
   quiz.logQuestions();
 
-  quiz.run();
+  auto run_result = quiz.run();
+  if (!run_result) {
+    std::cout << "Failed to run quiz: " << static_cast<int>(run_result.error())
+              << "\n";
+    return 1;
+  }
+
   std::cin.ignore();  // consume leftover newline
   std::cin.get();     // wait for user input
 

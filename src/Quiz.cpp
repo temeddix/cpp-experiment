@@ -8,15 +8,30 @@ Quiz::Quiz(std::string title) : title(std::move(title)) {}
 
 void Quiz::addQuestion(const Question& q) { questions.push_back(q); }
 
-void Quiz::run() const {
+std::expected<void, QuizError> Quiz::run() const {
+  if (questions.empty()) {
+    return std::unexpected{QuizError::NoQuestions};
+  }
+
   std::cout << "=== " << title << " ===\n\n";
   int score = {0};
   for (size_t i = {0}; i < questions.size(); ++i) {
     std::cout << "Question " << (i + 1) << "/" << questions.size() << ":\n";
-    if (questions[i].ask()) ++score;
+
+    auto result = questions[i].ask();
+    if (!result) {
+      std::cout << "Error asking question: " << static_cast<int>(result.error())
+                << "\n";
+      continue;
+    }
+
+    if (result.value()) {
+      ++score;
+    }
   }
   std::cout << "Quiz finished. Score: " << score << "/" << questions.size()
             << "\n";
+  return {};  // Success
 }
 
 void Quiz::logQuestions() const {
