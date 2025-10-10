@@ -1,0 +1,8 @@
+{
+  "clangd.fallbackFlags": [
+    "-std=c++17",
+    "-Wall",
+    "-Wextra",
+    "-I${workspaceFolder}/include"
+  ]
+}
