@@ -20,6 +20,14 @@ void Quiz::run() const {
 }
 
 void Quiz::logQuestions() const {
+  char choice;
+  std::cout << "Would you like to see the answer sheet? (y/n): ";
+  std::cin >> choice;
+
+  if (choice != 'y' && choice != 'Y') {
+    return;
+  }
+
   std::cout << "Logging questions:\n";
   for (const auto& q : questions) {
     this->logQuestion(q);
