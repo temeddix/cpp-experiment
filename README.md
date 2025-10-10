@@ -1,6 +1,6 @@
 # C++ Experiment
 
-This is a tiny, object-oriented CLI quiz written in C++17.
+This is a tiny, object-oriented CLI quiz written in C++.
 
 The purpose is to find ways to use VS Code with C++ codebases with a lot of legacy code.
 

@@ -5,7 +5,7 @@
 #include "subdir/Question.hpp"
 
 int main() {
-  Quiz quiz{"C++17 OOP CLI Quiz"};
+  Quiz quiz{"C++ OOP CLI Quiz"};
 
   quiz.addQuestion(Question{
       "What is the output type of std::string::size() in C++11 and later?",
