@@ -8,7 +8,7 @@ class Quiz {
 public:
   Quiz(std::string title);
   void addQuestion(const Question &q);
-  void run();
+  void run() const;
 
 private:
   std::string title_;

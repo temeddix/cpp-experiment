@@ -5,7 +5,7 @@ Quiz::Quiz(std::string title) : title_(std::move(title)) {}
 
 void Quiz::addQuestion(const Question &q) { questions_.push_back(q); }
 
-void Quiz::run() {
+void Quiz::run() const {
   std::cout << "=== " << title_ << " ===\n\n";
   int score = {0};
   for (size_t i = {0}; i < questions_.size(); ++i) {
