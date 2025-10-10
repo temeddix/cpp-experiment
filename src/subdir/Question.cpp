@@ -1,10 +1,12 @@
 #include "subdir/Question.hpp"
+
 #include <iostream>
 #include <limits>
 
 Question::Question(std::string prompt, std::vector<std::string> options,
                    int correctIndex)
-    : prompt(std::move(prompt)), options(std::move(options)),
+    : prompt(std::move(prompt)),
+      options(std::move(options)),
       correctIndex(correctIndex) {}
 
 bool Question::ask() const {
@@ -38,4 +40,10 @@ bool Question::ask() const {
               << options[correctIndex] << "\n\n";
   }
   return correct;
+}
+
+void Question::logStat() const {
+  std::cout << "Question: " << prompt << "\n";
+  std::cout << "Number of options: " << options.size() << "\n";
+  std::cout << "Correct option index: " << correctIndex << "\n";
 }

@@ -1,11 +1,10 @@
 #pragma once
 
-#include "subdir/Into.hpp"
 #include <string>
 #include <vector>
 
-class Question : Into<int> {
-public:
+class Question {
+ public:
   Question(std::string prompt, std::vector<std::string> options,
            int correctIndex);
 
@@ -13,9 +12,9 @@ public:
   // correct
   bool ask() const;
 
-  int into() && override { return this->correctIndex; }
+  void logStat() const;
 
-private:
+ private:
   std::string prompt;
   std::vector<std::string> options;
   int correctIndex;
