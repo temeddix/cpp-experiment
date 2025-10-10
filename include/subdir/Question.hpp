@@ -1,9 +1,10 @@
 #pragma once
 
+#include "subdir/Clone.hpp"
 #include <string>
 #include <vector>
 
-class Question {
+class Question : Clone<Question> {
 public:
   Question(std::string prompt, std::vector<std::string> options,
            int correctIndex);
@@ -12,8 +13,16 @@ public:
   // correct
   bool ask() const;
 
+  Question clone() const override {
+    return Question{
+        this->prompt,
+        this->options,
+        this->correctIndex,
+    };
+  }
+
 private:
-  std::string prompt_;
-  std::vector<std::string> options_;
-  int correctIndex_;
+  std::string prompt;
+  std::vector<std::string> options;
+  int correctIndex;
 };
