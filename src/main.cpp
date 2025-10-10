@@ -1,5 +1,6 @@
 #include "Quiz.hpp"
 #include "subdir/Question.hpp"
+#include <iostream>
 
 int main() {
   Quiz quiz{"C++17 OOP CLI Quiz"};
@@ -18,5 +19,8 @@ int main() {
                             2});
 
   quiz.run();
+  std::cin.ignore(); // consume leftover newline
+  std::cin.get();    // wait for user input
+
   return 0;
 }
