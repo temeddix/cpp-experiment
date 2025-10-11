@@ -37,8 +37,8 @@ auto Quiz::run() const -> std::expected<void, QuizError> {
 }
 
 auto Quiz::logQuestions() const -> void {
-  char choice;
   std::cout << "Would you like to see the answer sheet? (y/n): ";
+  char choice = '\0';
   std::cin >> choice;
 
   if (choice != 'y' && choice != 'Y') {

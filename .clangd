@@ -7,3 +7,4 @@ Diagnostics:
       - concurrency-*
       - clang-analyzer-*
       - readability-*
+      - cppcoreguidelines-*
