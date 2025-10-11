@@ -4,7 +4,11 @@
 #include <string>
 #include <vector>
 
-enum class QuestionError { InvalidOptionIndex, EmptyOptions, EmptyPrompt };
+enum class QuestionError : std::uint8_t {
+  InvalidOptionIndex,
+  EmptyOptions,
+  EmptyPrompt
+};
 
 class Question {
  public:
@@ -12,14 +16,17 @@ class Question {
   Question(std::string prompt, std::vector<std::string> options,
            int correctIndex);
 
-  // Ask the question on stdout, read an answer from stdin, return expected with
-  // result or error
-  std::expected<bool, QuestionError> ask() const;
+  // Ask the question on stdout, read an answer from stdin,
+  // return expected with result or error
+  [[nodiscard]]
+  auto ask() const -> std::expected<bool, QuestionError>;
 
-  void logStat() const;
+  auto logStat() const -> void;
 
  private:
   std::string prompt;
+
   std::vector<std::string> options;
+
   int correctIndex;
 };

@@ -4,7 +4,7 @@
 #include "Quiz.hpp"
 #include "subdir/Question.hpp"
 
-int main() {
+auto main() -> int {
   Quiz quiz{"C++ OOP CLI Quiz"};
 
   quiz.addQuestion(Question{

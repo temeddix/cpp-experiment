@@ -6,9 +6,9 @@
 
 Quiz::Quiz(std::string title) : title(std::move(title)) {}
 
-void Quiz::addQuestion(const Question& q) { questions.push_back(q); }
+auto Quiz::addQuestion(const Question& q) -> void { questions.push_back(q); }
 
-std::expected<void, QuizError> Quiz::run() const {
+auto Quiz::run() const -> std::expected<void, QuizError> {
   if (questions.empty()) {
     return std::unexpected{QuizError::NoQuestions};
   }
@@ -34,7 +34,7 @@ std::expected<void, QuizError> Quiz::run() const {
   return {};  // Success
 }
 
-void Quiz::logQuestions() const {
+auto Quiz::logQuestions() const -> void {
   char choice;
   std::cout << "Would you like to see the answer sheet? (y/n): ";
   std::cin >> choice;
@@ -50,6 +50,6 @@ void Quiz::logQuestions() const {
 }
 
 template <LogStat T>
-void Quiz::logQuestion(const T q) const {
+auto Quiz::logQuestion(const T q) const -> void {
   q.logStat();
 }
