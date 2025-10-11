@@ -14,7 +14,7 @@ class Quiz {
  public:
   Quiz(std::string title);
 
-  auto addQuestion(const Question& q) -> void;
+  auto addQuestion(const Question& question) -> void;
 
   auto logQuestions() const -> void;
 
@@ -27,5 +27,5 @@ class Quiz {
   std::vector<Question> questions;
 
   template <LogStat T>
-  auto logQuestion(const T) const -> void;
+  auto logQuestion(const T&) const -> void;
 };

@@ -6,7 +6,9 @@
 
 Quiz::Quiz(std::string title) : title(std::move(title)) {}
 
-auto Quiz::addQuestion(const Question& q) -> void { questions.push_back(q); }
+auto Quiz::addQuestion(const Question& question) -> void {
+  questions.push_back(question);
+}
 
 auto Quiz::run() const -> std::expected<void, QuizError> {
   if (questions.empty()) {
@@ -44,12 +46,12 @@ auto Quiz::logQuestions() const -> void {
   }
 
   std::cout << "Logging questions:\n";
-  for (const auto& q : questions) {
-    this->logQuestion(q);
+  for (const auto& question : questions) {
+    this->logQuestion(question);
   }
 }
 
 template <LogStat T>
-auto Quiz::logQuestion(const T q) const -> void {
-  q.logStat();
+auto Quiz::logQuestion(const T& question) const -> void {
+  question.logStat();
 }

@@ -6,3 +6,4 @@ Diagnostics:
       - performance-*
       - concurrency-*
       - clang-analyzer-*
+      - readability-*
