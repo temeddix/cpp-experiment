@@ -1,4 +1,4 @@
-Checks:
+Add:
   - bugprone-*
   - modernize-*
   - performance-*
